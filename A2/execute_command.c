@@ -13,14 +13,14 @@ int execute_command(char *command) {
     }
 
     if (pid == 0) {
-        // In the child process, execute the command
+        /* In the child process, execute the command */
         if (execlp(command, command, NULL) == -1) {
-            // If execlp returns, the command execution failed
+            /* If execlp returns, the command execution failed */
             perror(command);
             exit(EXIT_FAILURE);
         }
     } else {
-        // In the parent process, wait for the child to complete
+        /* In the parent process, wait for the child to complete */
         int status;
         waitpid(pid, &status, 0);
 
@@ -29,5 +29,5 @@ int execute_command(char *command) {
         }
     }
 
-    return 1;
+    return (1);
 }
