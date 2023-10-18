@@ -2,7 +2,8 @@
 #define SIMPLE_SHELL_H
 
 void print_environment(void);
-int execute_command(char *command);
+void execute_command(const char *command);
 void tokenize_command(char *command, char *args[], int *arg_count);
+char *read_command();
 
 #endif

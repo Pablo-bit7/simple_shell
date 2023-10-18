@@ -1,56 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include "simple_shell.h"
+
 /**
- * execute_command - Execute a shell command in a child process.
+ * execute_command - Execute a command.
  *
- * @command: A string with the command and arguments.
+ * This function executes a given command if it is an executable file.
  *
- * This function forks a new process to execute the provided command and
- * checks for errors during the process creation and execution.
- *
- * Return: Always 1 (not indicative of command success).
+ * @command: The command to execute.
  */
 
-int execute_command(char *command)
+void execute_command(const char *command)
 {
-	pid_t pid = fork();
-
-	if (pid == -1)
+	if (access(command, X_OK) == 0)
 	{
-		perror("fork");
-		exit(EXIT_FAILURE);
-	}
+		pid_t pid = fork();
 
-	if (pid == 0)
-	{
-		char *args[32];
-		int arg_count = 0;
-
-		tokenize_command(command, args, &arg_count);
-
-		if (execvp(args[0], args) == -1)
+		if (pid == -1)
 		{
-			fprintf(stderr, "./shell: %s: not found\n", args[0]);
-			exit(EXIT_FAILURE);
+			perror("fork");
+			exit(1);
+		}
+		if (pid == 0)
+		{
+			char **args = malloc(sizeof(char *) * 2);
+
+			if (args == NULL)
+			{
+				perror("malloc");
+				exit(1);
+			}
+
+			args[0] = strdup(command);
+			args[1] = NULL;
+
+			execve(command, args, NULL);
+			perror("execve");
+
+			free(args[0]);
+			free(args);
+			exit(1);
+		}
+		else
+		{
+			int status;
+
+			wait(&status);
 		}
 	}
 	else
 	{
-		int status;
-
-		waitpid(pid, &status, 0);
-
-		if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
-		{
-			fprintf(stderr, "./shell: %s: Exit status %d\n",
-					command, WEXITSTATUS(status));
-		}
+		printf("%s: No such file or directory\n", command);
 	}
-
-	return (1);
 }
 
