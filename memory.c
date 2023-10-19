@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* bfree - This func frees a pointer and NULLs the address
+* bfree - This func frees a pointer and NULLs its address
 * @ptr: The address of the pointer
 * Return: 1 if freed, otherwise 0.
 */

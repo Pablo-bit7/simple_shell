@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* main - Main methos (program entry point)
+* main - Main method (program entry point)
 * @av: The argument vector
 * @ac: The argument count
 *

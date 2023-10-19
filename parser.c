@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* is_cmd - This determines if a file is an exe command
+* is_cmd - Func determines if a file is an exe command
 * @info: Holds the info struct
 * @path: Holds path to the file
 * Return: 1 if true, 0 otherwise
@@ -22,7 +22,7 @@ int is_cmd(info_t *info, char *path)
 }
 
 /**
-* dup_chars - This function duplicates characters
+* dup_chars - The function duplicates characters
 * @pathstr: Holds thhe PATH string
 * @start: The tarting index
 * @stop: Holds the stopping index

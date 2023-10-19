@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* **strtow - This just plits string into words. Repeat delimiters are ignored
+* **strtow - This func splits string into words. Repeat delimiters are ignored
 * @str: Input string
 * @d: Delimeter string
 * Return: Pointer to a strings array, or NULL on failure
@@ -48,7 +48,7 @@ char **strtow(char *str, char *d)
 }
 
 /**
-* **strtow2 - This function just splits a string into words
+* **strtow2 - This function splits a string into words
 * @str: Holds the input string
 * @d: Holds the delimeter
 * Return: A pointer to an array of strings, or NULL on failure

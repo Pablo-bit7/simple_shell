@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _strcpy - Just copies a string
+* _strcpy - This function copies a string
 * @dest: The destination
 * @src: Source
 * Return: A pointer to destination
@@ -22,7 +22,7 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
-* _strdup - This duplicates a string
+* _strdup - This function duplicates a string
 * @str: The string
 * Return: A pointer to the duplicated string
 */
@@ -44,7 +44,7 @@ char *_strdup(const char *str)
 }
 
 /**
-* _puts - This prints an input string
+* _puts - This function prints an input string
 * @str: The string
 * Return: Nothing
 */
@@ -62,7 +62,7 @@ void _puts(char *str)
 }
 
 /**
-* _putchar - This function writes to stdout
+* _putchar - This func writes to stdout
 * @c: The character to print
 * Return: On success 1, -1 if else
 */

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _strlen - Just returns the length of a string
+* _strlen - This function returns the length of a string
 * @s: String
 * Return: The length of string
 */
@@ -18,7 +18,7 @@ int _strlen(char *s)
 }
 
 /**
-* _strcmp - This does lexicogarphic comparison of two strangs.
+* _strcmp - This func does lexicogarphic comparison of two strangs.
 * @s1: 1st string
 * @s2: 2nd strang
 * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
@@ -39,7 +39,7 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
-* starts_with - This function checks if needle starts with haystack
+* starts_with - This func checks if needle starts with haystack
 * @haystack: The string to search
 * @needle: substring to find
 * Return: The address of next char of haystack or NULL
@@ -53,7 +53,7 @@ char *starts_with(const char *haystack, const char *needle)
 }
 
 /**
-* _strcat - This just concatenates two strings
+* _strcat - This function just concatenates two strings
 * @dest: Destination buffer
 * @src: OG buffer
 * Return: A pointer to the destination buffer
