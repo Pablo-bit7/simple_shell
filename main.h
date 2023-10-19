@@ -51,7 +51,8 @@ typedef struct liststr
 } list_t;
 
 /**
-* struct passinfo - This struct holds pseudo-arguements to be passed into a function
+* struct passinfo - This struct holds pseudo-arguements
+* to be passed into a function
 * @arg: Holds string generated from getline
 * @histcount: The num count for history line
 * @argv: This holds an array of strings generated from arg
