@@ -5,5 +5,5 @@
  */
 void _prompt(void)
 {
-    _printf("#cisfun$ ");
+	_printf("#cisfun$ ");
 }

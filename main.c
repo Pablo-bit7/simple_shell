@@ -15,37 +15,37 @@
  */
 int main(void)
 {
-    char *input_result;
-    char **tokenized_command;
-    size_t buffer_size = 120;
+	char *input_result;
+	char **tokenized_command;
+	size_t buffer_size = 120;
 
-    while (1)
-    {
-        _prompt();
-        input_result = read_input(&buffer_size);
+	while (1)
+	{
+		_prompt();
+		input_result = read_input(&buffer_size);
 
-        if (_strcmp(input_result, "exit") == 0 || _atoi(input_result) == EOF)
-        {
-            _printf("\n");
-            free(input_result);  /* Free the allocated memory */
-            break;
-        }
+		if (_strcmp(input_result, "exit") == 0 || _atoi(input_result) == EOF)
+		{
+			_printf("\n");
+			free(input_result);  /* Free the allocated memory */
+			break;
+		}
 
-        if (input_result[0] == '\0')  /* Empty string */
-        {    
-            _printf("\n");
-            free(input_result);
-        }
+		if (input_result[0] == '\0')  /* Empty string */
+		{
+			_printf("\n");
+			free(input_result);
+		}
 
-        if (input_result[0] != '\0')
-        {
-            tokenized_command = tokenize(input_result, " ");
-            execute_command(tokenized_command); /* Execute the command */
-            /* Free allocated memory */
-            free(tokenized_command);
-            free(input_result);
-        }
-    }
+		if (input_result[0] != '\0')
+		{
+			tokenized_command = tokenize(input_result, " ");
+			execute_command(tokenized_command); /* Execute the command */
+			/* Free allocated memory */
+			free(tokenized_command);
+			free(input_result);
+		}
+	}
 
-    return (0);
+	return (0);
 }
